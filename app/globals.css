@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --color-primary: #800000;
+  /* Deep Maroon */
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #FFFFFF;
+  --color-secondary-foreground: #800000;
+
+  --color-accent: #DAA520;
+  /* Golden Rod / Mustard */
+  --color-accent-foreground: #FFFFFF;
+
+  --color-muted: oklch(0.97 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
+
+  --color-border: oklch(0.922 0 0);
+  --color-input: oklch(0.922 0 0);
+  --color-ring: #DAA520;
+
+  /* Shadcn/Sidebar Defaults */
+  --color-sidebar: #800000;
+  --color-sidebar-foreground: #FFFFFF;
+  --color-sidebar-primary: #DAA520;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #660000;
+  /* Darker Maroon */
+  --color-sidebar-accent-foreground: #FFFFFF;
+  --color-sidebar-border: #660000;
+  --color-sidebar-ring: #DAA520;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --background: #fdfaf9;
+  /* Very light reddish/warm background */
+  --foreground: #333333;
+  /* Dark Grey */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #000a1f;
+  --foreground: #FFFFFF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-primary;
+  }
+}
