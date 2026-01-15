@@ -2,7 +2,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import ReplicaHero from "@/components/ReplicaHero";
 import BentoGrid from "@/components/BentoGrid";
 import AcademicPrograms from "@/components/AcademicPrograms";
-import Faculty from "@/components/Faculty";
+import FacultyPreview from "@/components/FacultyPreview";
 import LifeAtSAI from "@/components/LifeAtSAI";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
         <ReplicaHero />
         <BentoGrid />
         <AcademicPrograms />
-        <Faculty />
+        <FacultyPreview />
         <LifeAtSAI />
       </div>
     </SmoothScroll>
