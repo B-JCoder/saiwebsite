@@ -49,10 +49,8 @@
 }
 
 :root {
-  --background: #fdfaf9;
-  /* Very light reddish/warm background */
+  --background: #ffffff;
   --foreground: #333333;
-  /* Dark Grey */
   --radius: 0.5rem;
 }
 
@@ -68,6 +66,14 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Fixed Premium Gradient Background */
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(353,100%,25%,0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(45,100%,75%,0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(353,100%,25%,0.05) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(45,100%,75%,0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   h1,

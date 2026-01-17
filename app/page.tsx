@@ -1,20 +1,38 @@
 import SmoothScroll from "@/components/SmoothScroll";
-import ReplicaHero from "@/components/ReplicaHero";
-import BentoGrid from "@/components/BentoGrid";
-import AcademicPrograms from "@/components/AcademicPrograms";
-import FacultyPreview from "@/components/FacultyPreview";
+import HeroSlider from "@/components/HeroSlider";
+import CorporateAbout from "@/components/CorporateAbout";
+import FacultyMarquee from "@/components/FacultyMarquee";
+import RevealOnScroll from "@/components/RevealOnScroll";
+import PrincipalMessage from "@/components/PrincipalMessage";
 import LifeAtSAI from "@/components/LifeAtSAI";
+import ParallaxSection from "@/components/ParallaxSection";
 
 export default function Home() {
   return (
-    <SmoothScroll>
+    <SmoothScroll >
       <div className="flex flex-col gap-0 pb-0 bg-background text-foreground overflow-x-hidden">
-        <ReplicaHero />
-        <BentoGrid />
-        <AcademicPrograms />
-        <FacultyPreview />
+        <HeroSlider />
+
+        {/* Overlapping Effect for About Section */}
+        <div className="-mt-20 z-10 relative">
+          <RevealOnScroll>
+            <CorporateAbout />
+          </RevealOnScroll>
+        </div>
+
+        {/* Parallax Divider */}
+        <ParallaxSection bgImage="/images/imgi_13_Page12.png" className="h-[40vh] flex items-center justify-center">
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter drop-shadow-2xl">
+            Leading the Future
+          </h2>
+        </ParallaxSection>
+
+        <PrincipalMessage />
+
+        <FacultyMarquee />
+
         <LifeAtSAI />
       </div>
-    </SmoothScroll>
+    </SmoothScroll >
   );
 }
