@@ -9,7 +9,7 @@ const Footer = () => {
 
                     {/* Brand Column */}
                     <div className="space-y-6">
-                        <h3 className="text-2xl font-heading font-black tracking-tighter uppercase">SIR ADAMJEE INSTITUTE</h3>
+                        <h3 className="text-2xl font-heading font-black tracking-tighter uppercase text-white">SIR ADAMJEE INSTITUTE</h3>
                         <p className="text-gray-300 text-sm leading-relaxed font-medium">
                             A premier educational institution dedicated to fostering academic excellence and character building. Empowering students for a brighter tomorrow.
                         </p>
@@ -42,7 +42,7 @@ const Footer = () => {
                         <div className="space-y-4 text-sm font-medium text-gray-300">
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="mt-1 text-accent" />
-                                <span>ST-2, Block 4, Gulshan-e-Iqbal, Karachi, Pakistan.</span>
+                                <span>Federal B Area, Block-2, Karachi.</span>
                             </div>
                             <div className="flex items-center gap-3">
                                 <FaPhone className="text-accent" />

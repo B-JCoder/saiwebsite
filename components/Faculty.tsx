@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 
 // Departmental Data
@@ -83,56 +84,101 @@ const departments = [
             { name: "Prof. Ghazala", image: "/images/Faculty/imgi_43_Ghazala-1.png", role: "Faculty" },
         ]
     }
-
 ];
 
 const Faculty = () => {
-    return (
-        <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
-                <div className="mb-20 text-center">
-                    <span className="uppercase text-xs font-black text-accent tracking-[0.3em] block mb-2">Academic Pillars</span>
-                    <h2 className="text-4xl md:text-5xl font-heading font-black text-primary uppercase tracking-tighter">Our Distinguished Faculty</h2>
-                    <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
-                </div>
+    // Animation Variants
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
 
-                <div className="space-y-24">
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 50, scale: 0.95, filter: "blur(10px)" },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20
+            }
+        }
+    };
+
+    return (
+        <section className="py-24 bg-gradient-to-br from-gray-50 via-gray-100 to-[#800000]/5 min-h-screen">
+            <div className="container mx-auto px-6">
+                <div className="space-y-32">
                     {departments.map((dept, deptIndex) => (
-                        <div key={deptIndex}>
+                        <div key={deptIndex} className="relative">
+
+                            {/* Department Header */}
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="mb-10 flex items-center gap-4"
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ type: "spring", stiffness: 50, damping: 20 }}
+                                className="mb-12 border-l-4 border-[#800000] pl-6"
                             >
-                                <div className="h-10 w-2 bg-accent rounded-full"></div>
-                                <h3 className="text-3xl font-black text-primary font-heading uppercase tracking-tight">{dept.name}</h3>
+                                <h3 className="text-4xl font-heading font-black text-gray-900 uppercase tracking-tighter shadow-sm">
+                                    {dept.name}
+                                </h3>
                             </motion.div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                            {/* Faculty Grid */}
+                            <motion.div
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-50px" }}
+                                className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8"
+                            >
                                 {dept.members.map((member, index) => (
                                     <motion.div
                                         key={index}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="group flex flex-col items-center text-center"
+                                        variants={itemVariants}
+                                        whileHover={{ y: -12, scale: 1.02 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                        className="group relative bg-white/40 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300"
                                     >
-                                        <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full shadow-xl overflow-hidden mb-4 border-4 border-white ring-2 ring-primary/10 group-hover:ring-accent transition-all duration-500">
+                                        {/* Image Container */}
+                                        <div className="relative aspect-[4/5] w-full overflow-hidden">
+                                            {/* Light Red Gradient Background behind image */}
+                                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#800000]/10 z-0"></div>
+
                                             <Image
                                                 src={member.image}
                                                 alt={member.name}
                                                 fill
-                                                className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                                                sizes="(max-width: 768px) 160px, 192px"
+                                                className="object-cover relative z-10 transition-transform duration-500 group-hover:scale-105"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
                                             />
+
+                                            {/* Gradient Overlay for Text Readability */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
                                         </div>
-                                        <h4 className="text-sm md:text-base font-bold text-primary uppercase tracking-tight leading-tight mb-1">{member.name}</h4>
-                                        <p className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-widest">{member.role}</p>
+
+                                        {/* Content Box */}
+                                        <div className="p-4 relative z-30 bg-white/80 backdrop-blur-sm group-hover:bg-white transition-colors border-t border-white/40">
+                                            <h4 className="text-base font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#800000] transition-colors">
+                                                {member.name}
+                                            </h4>
+                                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                                {member.role}
+                                            </p>
+                                        </div>
                                     </motion.div>
                                 ))}
-                            </div>
+                            </motion.div>
                         </div>
                     ))}
                 </div>
