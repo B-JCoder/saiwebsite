@@ -33,29 +33,38 @@ export default function FacultyPage() {
               {/* Badge */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#800000] rounded-full flex items-center justify-center p-4 shadow-lg hidden md:flex">
                 <span className="text-[#DAA520] font-black text-center text-xs uppercase leading-tight tracking-widest">
-                  Leading with<br />Vision
+                  Leading with
+                  <br />
+                  Vision
                 </span>
               </div>
             </div>
 
             <div className="md:w-1/2">
-              <span className="text-[#800000] font-bold text-sm uppercase tracking-widest block mb-2">Message from the Principal</span>
+              <span className="text-[#800000] font-bold text-sm uppercase tracking-widest block mb-2">
+                Message from the Principal
+              </span>
               <h2 className="text-3xl md:text-4xl font-heading font-black text-black mb-6 leading-tight">
                 Inspiring Minds, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#800000] to-[#DAA520]">Building Character.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#800000] to-[#DAA520]">
+                  Building Character.
+                </span>
               </h2>
               <blockquote className="text-gray-600 text-lg leading-relaxed italic mb-8 border-l-4 border-[#DAA520] pl-6">
-                "At Sir Adamjee Institute, we believe that education is not just about academic success; it is about shaping the character and future of our students. We provide a disciplined, nurturing environment where young minds can thrive and prepare for the challenges of tomorrow."
+                "At Sir Adamjee Institute, we believe that education is not just
+                about academic success; it is about shaping the character and
+                future of our students. We provide a disciplined, nurturing
+                environment where young minds can thrive and prepare for the
+                challenges of tomorrow."
               </blockquote>
 
               <div>
-<<<<<<< HEAD
-                <h4 className="text-xl font-bold text-black uppercase tracking-tight">Prof. Sir Adamjee Principal</h4>
-                <p className="text-[#DAA520] text-sm font-bold uppercase tracking-widest">Principal, SAI</p>
-=======
-                <h4 className="text-xl font-bold text-black uppercase tracking-tight">Prof. Sohail Farooqi</h4>
-                <p className="text-[#DAA520] text-sm font-bold uppercase tracking-widest">Principal, Sir Adamjee Institute</p>
->>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
+                <h4 className="text-xl font-bold text-black uppercase tracking-tight">
+                  Prof. Sohail Farooqi
+                </h4>
+                <p className="text-[#DAA520] text-sm font-bold uppercase tracking-widest">
+                  Principal, Sir Adamjee Institute
+                </p>
               </div>
             </div>
           </div>

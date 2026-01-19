@@ -33,7 +33,11 @@ function TiltCard({
   const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+  function handleMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: React.MouseEvent) {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     const xPct = (clientX - left) / width - 0.5;
     const yPct = (clientY - top) / height - 0.5;
@@ -58,11 +62,7 @@ function TiltCard({
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-<<<<<<< HEAD
-      className={`relative h-full w-full rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-10 cursor-pointer shadow-xl`}
-=======
       className={`relative h-full w-full rounded-3xl bg-white/10 backdrop-blur-md border ${gradientBorder} p-10 cursor-pointer shadow-xl`}
->>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     >
       <div
         style={{ transform: "translateZ(50px)" }}
@@ -80,13 +80,7 @@ function TiltCard({
 }
 
 // 2. Spotlight Card
-function SpotlightCard({
-  icon: Icon,
-  title,
-}: {
-  icon: any;
-  title: string;
-}) {
+function SpotlightCard({ icon: Icon, title }: { icon: any; title: string }) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -166,7 +160,8 @@ export default function Mission() {
               Since 2005
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-tight mb-8 uppercase tracking-tighter">
-              Building Character,<br />
+              Building Character,
+              <br />
               <span className="text-white/80">Shaping Minds</span>
             </h1>
             <p className="text-white/60 text-xl font-light tracking-widest uppercase">
@@ -191,8 +186,8 @@ export default function Mission() {
                   gradientBorder="border-[#DAA520]/20"
                   text={
                     <>
-                      "To provide an environment where students can discover their
-                      potential and achieve{" "}
+                      "To provide an environment where students can discover
+                      their potential and achieve{" "}
                       <span className="text-[#DAA520] font-bold">
                         academic excellence
                       </span>{" "}
@@ -215,8 +210,8 @@ export default function Mission() {
                       <span className="text-[#DAA520] font-bold">
                         Quality Education
                       </span>{" "}
-                      for the Middle Class, empowering them to compete on a global
-                      stage."
+                      for the Middle Class, empowering them to compete on a
+                      global stage."
                     </>
                   }
                 />
@@ -282,14 +277,42 @@ export default function Mission() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Features from components/Features.tsx which user requested to use */}
             {[
-              { title: "Quality Education", icon: GraduationCap, desc: "Academic excellence at an affordable fee." },
-              { title: "Merit Scholarship", icon: Award, desc: "Financial assistance for bright minds." },
-              { title: "Equipped Labs", icon: Microscope, desc: "State-of-the-art physics & chemistry labs." },
-              { title: "IT Training", icon: Cpu, desc: "Advanced computer science curriculum." },
-              { title: "Huge Campus", icon: Building, desc: "Purpose built campus with all facilities." },
-              { title: "Character Building", icon: Heart, desc: "Fostering discipline and moral values." },
+              {
+                title: "Quality Education",
+                icon: GraduationCap,
+                desc: "Academic excellence at an affordable fee.",
+              },
+              {
+                title: "Merit Scholarship",
+                icon: Award,
+                desc: "Financial assistance for bright minds.",
+              },
+              {
+                title: "Equipped Labs",
+                icon: Microscope,
+                desc: "State-of-the-art physics & chemistry labs.",
+              },
+              {
+                title: "IT Training",
+                icon: Cpu,
+                desc: "Advanced computer science curriculum.",
+              },
+              {
+                title: "Huge Campus",
+                icon: Building,
+                desc: "Purpose built campus with all facilities.",
+              },
+              {
+                title: "Character Building",
+                icon: Heart,
+                desc: "Fostering discipline and moral values.",
+              },
             ].map((feature, idx) => (
-              <SpotlightCard key={idx} title={feature.title} icon={feature.icon} />
+              <SpotlightCard
+                key={idx}
+                title={feature.title}
+                icon={feature.icon}
+              />
             ))}
           </div>
         </div>
@@ -302,15 +325,21 @@ export default function Mission() {
       */}
       <style jsx global>{`
         @keyframes gradient-pulse {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         .animate-gradient-pulse {
           animation: gradient-pulse 15s ease infinite;
         }
         .perspective-1000 {
-            perspective: 1000px;
+          perspective: 1000px;
         }
       `}</style>
     </div>
