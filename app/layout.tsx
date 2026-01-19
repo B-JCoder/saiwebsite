@@ -1,7 +1,10 @@
+import MagneticCursor from "@/components/MagneticCursor";
+import SmoothScroll from "@/components/SmoothScroll";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import PremiumNavbar from "@/components/PremiumNavbar";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,13 +32,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${poppins.variable} antialiased font-sans bg-background text-foreground`}
+        suppressHydrationWarning
       >
-        <PremiumNavbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <Preloader />
+        <SmoothScroll>
+          <MagneticCursor />
+          <PremiumNavbar />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScroll>
       </body>
-    </html>
+    </html >
   );
 }

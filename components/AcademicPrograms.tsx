@@ -41,24 +41,20 @@ const AcademicPrograms = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2, duration: 0.6 }}
-                            whileHover={{ y: -10 }}
-                            className="group relative bg-background rounded p-1 shadow-lg hover:shadow-2xl transition-all duration-300"
+                            className="group relative bg-white border border-gray-200 p-8 hover:border-[#800000] transition-all duration-300"
                         >
-                            <div className={`h-2 w-full bg-gradient-to-r ${program.color} rounded-t`}></div>
-                            <div className="p-8">
-                                <div className={`w-16 h-16 rounded bg-primary flex items-center justify-center text-accent text-2xl mb-6 shadow-lg group-hover:bg-accent group-hover:text-primary transition-colors duration-300`}>
-                                    <program.icon />
-                                </div>
-
-                                <h3 className="text-2xl font-black text-primary mb-4 font-heading uppercase tracking-tight">{program.title}</h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed font-medium text-sm">
-                                    {program.description}
-                                </p>
-
-                                <a href="#" className="inline-flex items-center gap-2 text-primary font-black uppercase text-xs tracking-widest hover:text-accent transition-colors">
-                                    Details <FaArrowRight className="text-[10px]" />
-                                </a>
+                            <div className="mb-6 text-[#800000] text-4xl group-hover:text-[#DAA520] transition-colors">
+                                <program.icon />
                             </div>
+
+                            <h3 className="text-2xl font-bold text-black mb-4 uppercase tracking-tight">{program.title}</h3>
+                            <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                                {program.description}
+                            </p>
+
+                            <a href="#" className="inline-flex items-center gap-2 text-[#800000] font-bold uppercase text-xs tracking-widest hover:text-[#DAA520] transition-colors">
+                                Details <FaArrowRight className="text-[10px]" />
+                            </a>
                         </motion.div>
                     ))}
                 </div>

@@ -25,9 +25,9 @@ const Hero = () => {
                     muted
                     playsInline
                     className="w-full h-full object-cover opacity-60"
-                    poster="/imgaes/imgi_2_Page1-scaled.jpg"
+                    poster="/images/imgi_2_Page1-scaled.jpg"
                 >
-                    <source src="/imgaes/video_placeholder.mp4" type="video/mp4" />
+                    <source src="/video_sai.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-primary/90"></div>
             </div>
