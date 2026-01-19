@@ -10,8 +10,8 @@ const slides = [
   {
     type: "video",
     src: "/saibuildingvideo.mp4",
-    heading: "We Reimagine Tomorrow",
-    subtext: "Driving growth and molding the future through excellence.",
+    heading: "GATEWAY TO EXCELLENCE",
+    subtext: "Where Legacy Meets Future",
   },
 ];
 
@@ -93,19 +93,19 @@ export default function HeroSlider() {
             />
           )}
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-center px-10 md:px-20 max-w-5xl">
+      <div className="absolute inset-0 z-20 flex flex-col justify-end items-center pb-64 px-4 md:px-24 text-center mx-auto w-full max-w-7xl">
         <div className="overflow-hidden">
           <motion.h1
             key={currentSlide} // Key change triggers re-render & animation reset
             variants={sentence}
             initial="hidden"
             animate="visible"
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white uppercase tracking-tighter mb-4 leading-tight drop-shadow-lg"
+            className="text-xl md:text-7xl lg:text-8xl font-heading font-black text-white uppercase tracking-tighter mb-4 leading-tight drop-shadow-lg"
           >
             {slides[currentSlide].heading.split("").map((char, index) => (
               <motion.span key={index} variants={letter}>
@@ -121,8 +121,8 @@ export default function HeroSlider() {
         </div>
         <motion.p
           key={`sub-${currentSlide}`}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1 }}
           className="text-xl md:text-2xl text-white/80 font-light mb-10 max-w-xl"
         >
@@ -135,16 +135,16 @@ export default function HeroSlider() {
           transition={{ delay: 1.5 }}
         >
           <Link
-            href="/admissions"
+            href="/about-us"
             className="inline-block px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-300 border border-white"
           >
-            Explore More
+            About Us
           </Link>
         </motion.div>
       </div>
 
       {/* Controls */}
-      <button
+      {/* <button
         onClick={prevSlide}
         className="absolute left-6 top-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
@@ -163,7 +163,7 @@ export default function HeroSlider() {
           size={60}
           strokeWidth={1}
         />
-      </button>
+      </button> */}
 
       {/* Dots */}
       {/* <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-4">

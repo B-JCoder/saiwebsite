@@ -9,7 +9,7 @@ import ParallaxSection from "@/components/ParallaxSection";
 
 export default function Home() {
   return (
-    <SmoothScroll >
+    <SmoothScroll>
       <div className="flex flex-col gap-0 pb-0 bg-background text-foreground overflow-x-hidden">
         <HeroSlider />
 
@@ -21,7 +21,10 @@ export default function Home() {
         </div>
 
         {/* Parallax Divider */}
-        <ParallaxSection bgImage="/images/imgi_13_Page12.png" className="h-[40vh] flex items-center justify-center">
+        <ParallaxSection
+          bgImage="/images/imgi_13_Page12.png"
+          className="h-[40vh] flex items-center justify-center"
+        >
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter drop-shadow-2xl">
             Leading the Future
           </h2>
@@ -33,6 +36,6 @@ export default function Home() {
 
         <LifeAtSAI />
       </div>
-    </SmoothScroll >
+    </SmoothScroll>
   );
 }
