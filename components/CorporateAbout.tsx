@@ -22,15 +22,21 @@ const CorporateAbout = () => {
                             className="md:w-1/2"
                         >
                             <span className="text-[#800000] font-bold text-sm uppercase tracking-widest mb-4 block">About Us</span>
+<<<<<<< HEAD
                             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-black">
                                 Driving Excellence in <br />
                                 <span className="text-[#DAA520]">Education.</span>
+=======
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
+                                Driving Excellence in <span className="text-[#DAA520]">Education.</span>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                             </h2>
                             <p className="text-lg text-gray-700 mb-8 leading-relaxed font-medium">
                                 Sir Adamjee Institute is a premier educational institution dedicated to fostering academic brilliance and character development. We provide a rigorous learning environment that prepares students not just for exams, but for life.
                             </p>
 
                             <div className="grid grid-cols-2 gap-8 mb-8">
+<<<<<<< HEAD
                                 <div>
                                     <h3 className="text-4xl font-bold text-[#800000] mb-2">
                                         <CountUp end={21} duration={3} suffix="+" />
@@ -43,6 +49,30 @@ const CorporateAbout = () => {
                                     </h3>
                                     <p className="text-sm text-gray-600 font-bold uppercase tracking-wider">Alumni Success</p>
                                 </div>
+=======
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                >
+                                    <h3 className="text-4xl font-bold text-[#800000] mb-2">
+                                        <CountUp end={21} duration={3} suffix="+" enableScrollSpy scrollSpyOnce />
+                                    </h3>
+                                    <p className="text-sm text-gray-600 font-bold uppercase tracking-wider">Years of Legacy</p>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.5 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: 0.4 }}
+                                >
+                                    <h3 className="text-4xl font-bold text-[#800000] mb-2">
+                                        <CountUp end={9000} duration={3} suffix="+" enableScrollSpy scrollSpyOnce />
+                                    </h3>
+                                    <p className="text-sm text-gray-600 font-bold uppercase tracking-wider">Alumni Success</p>
+                                </motion.div>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                             </div>
 
                             <Link href="/about-us">
@@ -54,6 +84,7 @@ const CorporateAbout = () => {
 
                         {/* Right Column: Image */}
                         <motion.div
+<<<<<<< HEAD
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -69,6 +100,34 @@ const CorporateAbout = () => {
                                     className="w-full h-full object-cover"
                                 />
                             </div>
+=======
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="md:w-1/2 relative flex justify-center md:justify-end md:pr-10 items-center"
+                        >
+                            {/* 3D Logo Container */}
+                            <motion.div
+                                animate={{
+                                    y: [-10, 10, -10]
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="relative z-10"
+                            >
+                                <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden flex items-center justify-center drop-shadow-[0_20px_50px_rgba(218,165,32,0.3)] border-4 border-[#DAA520]">
+                                    <img
+                                        src="/images/sai_seal_fixed.jpg"
+                                        alt="SAI Seal 3D"
+                                        className="w-full h-full object-cover scale-[1.10] filter contrast-125 saturate-110"
+                                    />
+                                </div>
+                            </motion.div>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                         </motion.div>
                     </div>
                 </div>

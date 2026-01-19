@@ -198,7 +198,10 @@ export default function AdmissionsPage() {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
       {/* Fee Structure */}
       <section className="py-24 bg-[#1a1a1a] text-white">
         <div className="container mx-auto px-6 max-w-4xl">

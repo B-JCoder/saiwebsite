@@ -36,7 +36,11 @@ const PrincipalMessage = () => {
                             </div>
 
                             <div className="mt-10 pt-6 border-t border-[#800000]/10">
+<<<<<<< HEAD
                                 <h4 className="text-xl font-black text-[#800000] font-heading uppercase">Mr. Principal Name</h4>
+=======
+                                <h4 className="text-xl font-black text-[#800000] font-heading uppercase">Prof. Sohail Farooqi</h4>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                                 <p className="text-[#DAA520] font-bold text-xs uppercase tracking-widest">Principal, Sir Adamjee Institute</p>
                             </div>
                         </div>

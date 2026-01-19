@@ -58,7 +58,11 @@ function TiltCard({
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+<<<<<<< HEAD
       className={`relative h-full w-full rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-10 cursor-pointer shadow-xl`}
+=======
+      className={`relative h-full w-full rounded-3xl bg-white/10 backdrop-blur-md border ${gradientBorder} p-10 cursor-pointer shadow-xl`}
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     >
       <div
         style={{ transform: "translateZ(50px)" }}

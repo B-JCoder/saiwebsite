@@ -15,6 +15,10 @@ export default function Downloads() {
             <div className="max-w-4xl mx-auto space-y-4">
 
                 {/* Download Item */}
+<<<<<<< HEAD
+=======
+                {/* Download Item */}
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                 <div className="bg-white p-6 rounded-xl shadow border border-gray-100 flex items-center justify-between hover:border-[#800000] transition-colors group">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-red-50 text-[#800000] rounded-lg flex items-center justify-center text-2xl">
@@ -25,9 +29,19 @@ export default function Downloads() {
                             <p className="text-sm text-gray-500">PDF Document • 1.2 MB</p>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <button className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-[#800000] hover:text-white transition-colors flex items-center gap-2">
                         <FaDownload /> Download
                     </button>
+=======
+                    <a
+                        href="/downloads/SAI_Admission_Form_2024.pdf"
+                        download
+                        className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-[#800000] hover:text-white transition-colors flex items-center gap-2"
+                    >
+                        <FaDownload /> Download
+                    </a>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                 </div>
 
                 {/* Download Item */}
@@ -41,9 +55,19 @@ export default function Downloads() {
                             <p className="text-sm text-gray-500">PDF Document • 5.5 MB</p>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <button className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-[#800000] hover:text-white transition-colors flex items-center gap-2">
                         <FaDownload /> Download
                     </button>
+=======
+                    <a
+                        href="/downloads/SAI_Prospectus_2024.pdf"
+                        download
+                        className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-[#800000] hover:text-white transition-colors flex items-center gap-2"
+                    >
+                        <FaDownload /> Download
+                    </a>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                 </div>
 
                 <div className="h-8"></div>
@@ -60,9 +84,19 @@ export default function Downloads() {
                             <p className="text-sm text-gray-500">Official Board Schedule</p>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <button className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-blue-800 hover:text-white transition-colors flex items-center gap-2">
                         <FaDownload /> Download
                     </button>
+=======
+                    <a
+                        href="/downloads/SAI_HSC_Datesheet_2024.pdf"
+                        download
+                        className="px-6 py-2 bg-gray-100 text-gray-700 font-bold rounded-lg hover:bg-blue-800 hover:text-white transition-colors flex items-center gap-2"
+                    >
+                        <FaDownload /> Download
+                    </a>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                 </div>
 
             </div>

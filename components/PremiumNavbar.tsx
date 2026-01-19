@@ -2,6 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+<<<<<<< HEAD
+=======
+import Image from "next/image";
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
 import { Search, Globe, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -97,10 +101,23 @@ export default function PremiumNavbar() {
             >
                 <div className="container mx-auto px-6 flex items-center justify-between relative">
                     {/* Logo */}
+<<<<<<< HEAD
                     <Link href="/" className="flex items-center gap-2 z-50">
                         <span className={`text-2xl md:text-3xl font-black tracking-tighter uppercase ${isSolid ? "text-[#800000]" : "text-white"}`}>
                             SAI<span className="text-[#DAA520]">.</span>
                         </span>
+=======
+                    <Link href="/" className="flex items-center gap-3 z-50 -ml-8">
+                        <div className="relative w-[200px] h-12">
+                            <Image
+                                src="/images/sai_header_logo.png"
+                                alt="SAI Logo"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                     </Link>
 
                     {/* Desktop Menu */}
@@ -127,6 +144,10 @@ export default function PremiumNavbar() {
 
                     {/* Right Icons */}
                     <div className="hidden md:flex items-center gap-6">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                         <Link
                             href="/admissions"
                             className={`px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm ${isSolid

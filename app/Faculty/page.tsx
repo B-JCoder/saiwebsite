@@ -49,8 +49,13 @@ export default function FacultyPage() {
               </blockquote>
 
               <div>
+<<<<<<< HEAD
                 <h4 className="text-xl font-bold text-black uppercase tracking-tight">Prof. Sir Adamjee Principal</h4>
                 <p className="text-[#DAA520] text-sm font-bold uppercase tracking-widest">Principal, SAI</p>
+=======
+                <h4 className="text-xl font-bold text-black uppercase tracking-tight">Prof. Sohail Farooqi</h4>
+                <p className="text-[#DAA520] text-sm font-bold uppercase tracking-widest">Principal, Sir Adamjee Institute</p>
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
               </div>
             </div>
           </div>

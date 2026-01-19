@@ -55,21 +55,34 @@ const facultyMembers = [
     {
         name: "Prof. S. Qutubuddin Hayder",
         designation: "Vice Principal",
+<<<<<<< HEAD
         image: "/images/sai-img-1 (1).jpeg",
+=======
+        image: "/images/Faculty/imgi_6_Qutub.png",
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     },
     {
         name: "Prof. Humaira Qayyum",
         designation: "HOD Commerce",
+<<<<<<< HEAD
         image: "/images/sai-img-1 (12).jpeg",
+=======
+        image: "/images/Faculty/imgi_7_Humeria.png",
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     },
     {
         name: "Prof. M. Irfan Qureshi",
         designation: "HOD English",
+<<<<<<< HEAD
         image: "/images/sai-img-1 (20).jpeg",
+=======
+        image: "/images/Faculty/imgi_11_Irfan.png",
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     },
     {
         name: "Prof. Sohail Ibrahim",
         designation: "HOD Physics",
+<<<<<<< HEAD
         image: "/images/sai-img-1 (30).jpeg",
     },
     {
@@ -86,6 +99,24 @@ const facultyMembers = [
         name: "Ms. Ayesha Khan",
         designation: "Senior Faculty Biology",
         image: "/images/sai-img-1 (15).jpeg",
+=======
+        image: "/images/Faculty/imgi_21_Sohail_Ibrahim.png",
+    },
+    {
+        name: "Prof. Pervez",
+        designation: "Senior Faculty",
+        image: "/images/Faculty/imgi_22_Pervez.png",
+    },
+    {
+        name: "Prof. Kamran",
+        designation: "Senior Faculty",
+        image: "/images/Faculty/imgi_24_Kamran.png",
+    },
+    {
+        name: "Ms. Erum",
+        designation: "Senior Faculty",
+        image: "/images/Faculty/imgi_16_Erum.png",
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
     },
 ];
 
@@ -94,7 +125,11 @@ export default function FacultyMarquee() {
         <section className="py-24 bg-gray-50 overflow-hidden">
             <div className="container mx-auto px-6 mb-12 text-center">
                 <h2 className="text-4xl md:text-5xl font-heading font-black text-[#800000] uppercase tracking-tighter">
+<<<<<<< HEAD
                     Hall of Fame
+=======
+                    Distinguished Faculty
+>>>>>>> 8380a61aaaea9922053889363695a7e5abea53b1
                 </h2>
                 <div className="w-24 h-1 bg-[#DAA520] mx-auto mt-4 rounded-full" />
             </div>
