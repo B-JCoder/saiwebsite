@@ -46,6 +46,30 @@ const menuItems = {
       },
     ],
   },
+  admissions: {
+    title: "Admissions",
+    href: "/admissions",
+    columns: [
+      {
+        heading: "Application",
+        links: [
+          { name: "Apply Online", href: "/admissions/apply" },
+          { name: "How to Apply", href: "/admissions" },
+        ],
+      },
+      {
+        heading: "Information",
+        links: [
+          { name: "Eligibility Criteria", href: "/admissions" },
+          { name: "Fee Structure", href: "/admissions" },
+        ],
+      },
+      {
+        heading: "Join Us",
+        content: "Take the first step towards a bright future at SAI.",
+      },
+    ],
+  },
   groups: {
     title: "Groups",
     href: "/groups", // Added generic href
@@ -146,15 +170,7 @@ export default function PremiumNavbar() {
             ))}
             {/* Restoring Missing Links */}
 
-            <Link
-              href="/admissions"
-              className={`text-sm font-bold uppercase tracking-wide ${isSolid
-                ? "text-black hover:text-[#DAA520]"
-                : "text-white hover:text-[#DAA520]"
-                }`}
-            >
-              Admissions
-            </Link>
+
             <Link
               href="/downloads"
               className={`text-sm font-bold uppercase tracking-wide ${isSolid

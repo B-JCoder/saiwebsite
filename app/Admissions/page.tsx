@@ -11,33 +11,17 @@ import {
   FaDownload,
 } from "react-icons/fa";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export default function AdmissionsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#800000]">
-          {/* Overlay & Pattern */}
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 opacity-10 bg-[url('/images/imgi_13_Page12.png')] bg-cover bg-center" />
-        </div>
-
-        <div className="relative z-10 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="block text-[#DAA520] font-bold tracking-[0.3em] uppercase mb-4">
-              Admissions Open 2026
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">
-              Join the Legacy
-            </h1>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        title="Join the Legacy"
+        subtitle="Admissions Open 2026"
+        imageSrc="/images/imgi_13_Page12.png"
+      />
 
       {/* Introduction */}
       <section className="py-20 container mx-auto px-6 text-center max-w-4xl">
