@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 const menuItems = {
   about: {
     title: "About Us",
+    href: "/about-us",
     columns: [
       {
         heading: "Leadership",
@@ -33,6 +34,7 @@ const menuItems = {
   },
   academics: {
     title: "Academics",
+    href: "/academics", // Added generic href
     columns: [
       {
         heading: "Faculty",
@@ -46,6 +48,7 @@ const menuItems = {
   },
   groups: {
     title: "Groups",
+    href: "/groups", // Added generic href
     columns: [
       {
         heading: "Academic Pathways",
@@ -88,14 +91,23 @@ export default function PremiumNavbar() {
   // Dynamic Background Logic
   const isSolid = !isHome || isScrolled || hoveredMenu;
 
+  const handleMenuClick = (key: string, href: string) => {
+    if (hoveredMenu === key) {
+      // If already open, navigate
+      window.location.href = href;
+    } else {
+      // If closed, open it
+      setHoveredMenu(key);
+    }
+  };
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isSolid
-            ? "bg-white text-black shadow-md py-4"
-            : "bg-transparent text-white py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSolid
+          ? "bg-white text-black shadow-md py-4"
+          : "bg-transparent text-white py-6"
+          }`}
         onMouseLeave={() => setHoveredMenu(null)}
       >
         <div className="container mx-auto px-6 flex items-center justify-between relative">
@@ -122,14 +134,11 @@ export default function PremiumNavbar() {
                 className="relative py-4"
               >
                 <button
-                  onClick={() =>
-                    setHoveredMenu(hoveredMenu === key ? null : key)
-                  }
-                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${
-                    isSolid
-                      ? "text-black hover:text-[#DAA520]"
-                      : "text-white hover:text-[#DAA520]"
-                  } transition-colors`}
+                  onClick={() => handleMenuClick(key, item.href)}
+                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${isSolid
+                    ? "text-black hover:text-[#DAA520]"
+                    : "text-white hover:text-[#DAA520]"
+                    } transition-colors`}
                 >
                   {item.title} <ChevronDown size={14} />
                 </button>
@@ -139,31 +148,28 @@ export default function PremiumNavbar() {
 
             <Link
               href="/admissions"
-              className={`text-sm font-bold uppercase tracking-wide ${
-                isSolid
-                  ? "text-black hover:text-[#DAA520]"
-                  : "text-white hover:text-[#DAA520]"
-              }`}
+              className={`text-sm font-bold uppercase tracking-wide ${isSolid
+                ? "text-black hover:text-[#DAA520]"
+                : "text-white hover:text-[#DAA520]"
+                }`}
             >
               Admissions
             </Link>
             <Link
               href="/downloads"
-              className={`text-sm font-bold uppercase tracking-wide ${
-                isSolid
-                  ? "text-black hover:text-[#DAA520]"
-                  : "text-white hover:text-[#DAA520]"
-              }`}
+              className={`text-sm font-bold uppercase tracking-wide ${isSolid
+                ? "text-black hover:text-[#DAA520]"
+                : "text-white hover:text-[#DAA520]"
+                }`}
             >
               Downloads
             </Link>
             <Link
               href="/contact-us"
-              className={`text-sm font-bold uppercase tracking-wide ${
-                isSolid
-                  ? "text-black hover:text-[#DAA520]"
-                  : "text-white hover:text-[#DAA520]"
-              }`}
+              className={`text-sm font-bold uppercase tracking-wide ${isSolid
+                ? "text-black hover:text-[#DAA520]"
+                : "text-white hover:text-[#DAA520]"
+                }`}
             >
               Contact
             </Link>
@@ -172,12 +178,11 @@ export default function PremiumNavbar() {
           {/* Right Icons */}
           <div className="hidden md:flex items-center gap-6">
             <Link
-              href="/admissions"
-              className={`px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm ${
-                isSolid
-                  ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
-                  : "bg-white text-black border-white hover:bg-[#DAA520] hover:text-black"
-              }`}
+              href="/admissions/apply"
+              className={`px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm ${isSolid
+                ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
+                : "bg-white text-black border-white hover:bg-[#DAA520] hover:text-black"
+                }`}
             >
               Apply Now
             </Link>
@@ -270,7 +275,7 @@ export default function PremiumNavbar() {
               </Link>
             ))}
             <Link
-              href="/admissions"
+              href="/admissions/apply"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-8 bg-[#DAA520] text-black px-10 py-3 font-bold uppercase tracking-widest"
             >

@@ -1,23 +1,17 @@
 "use client";
 
+import PageHeader from "@/components/PageHeader";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 export default function ContactUs() {
   return (
     <div className="w-full">
       {/* Header Section */}
-      <div className="bg-[#8B0000] py-24 relative overflow-hidden">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <span className="uppercase text-sm font-bold text-yellow-500 tracking-[0.2em] block mb-4">Get in Touch</span>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tighter mb-6 drop-shadow-lg">
-            Contact Us
-          </h1>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
-        </div>
-      </div>
+      <PageHeader
+        title="Contact Us"
+        subtitle="Get in Touch"
+        imageSrc="/images/sai-img-1 (14).jpeg"
+      />
 
       {/* Main Content Section */}
       <div className="bg-gray-50 py-20">

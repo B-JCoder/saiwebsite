@@ -66,14 +66,15 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Fixed Premium Gradient Background */
+    /* Premium Grid & Gradient Background */
+    background-color: #ffffff;
     background-image: 
-        radial-gradient(at 0% 0%, hsla(353,100%,25%,0.05) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, hsla(45,100%,75%,0.1) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, hsla(353,100%,25%,0.05) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(45,100%,75%,0.1) 0px, transparent 50%);
+        linear-gradient(rgba(128, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(128, 0, 0, 0.03) 1px, transparent 1px),
+        radial-gradient(at 0% 0%, hsla(353,100%,25%,0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(45,100%,75%,0.15) 0px, transparent 50%);
+    background-size: 40px 40px, 40px 40px, cover, cover;
     background-attachment: fixed;
-    background-size: cover;
   }
 
   h1,

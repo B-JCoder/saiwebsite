@@ -141,7 +141,7 @@ function FacultyCard({ member }: { member: any }) {
           src={member.image}
           alt={member.name}
           fill
-          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+          className="object-cover transition-all duration-500"
         />
 
         {/* Glass Overlay for Text */}

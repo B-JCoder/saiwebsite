@@ -324,9 +324,17 @@ export default function AdmissionsPage() {
               Download the admission form and take the first step towards a
               bright future.
             </p>
-            <button className="bg-[#800000] text-white px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-[#DAA520] transition-colors shadow-lg inline-flex items-center gap-3">
-              <FaDownload /> Download Admission Form
-            </button>
+            <div className="flex flex-col md:flex-row gap-6 justify-center">
+              <Link
+                href="/admissions/apply"
+                className="bg-[#DAA520] text-black px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-colors shadow-lg inline-flex items-center gap-3"
+              >
+                Apply Online Now
+              </Link>
+              <button className="bg-white text-[#800000] border-2 border-[#800000] px-10 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-colors shadow-lg inline-flex items-center gap-3">
+                <FaDownload /> Download Form
+              </button>
+            </div>
           </div>
         </div>
       </section>
