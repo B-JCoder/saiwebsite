@@ -25,7 +25,7 @@ export default function Home() {
           bgImage="/images/imgi_13_Page12.png"
           className="h-[40vh] flex items-center justify-center"
         >
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter drop-shadow-2xl">
+          <h2 className="text-4xl md:text-6xl font-black text-[#8B0000] uppercase tracking-tighter drop-shadow-2xl">
             Leading the Future
           </h2>
         </ParallaxSection>

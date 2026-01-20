@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import ApplicationModal from "./ApplicationModal";
 
 import Image from "next/image";
 
@@ -97,6 +98,7 @@ export default function PremiumNavbar() {
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   // Close menu on route change
@@ -138,7 +140,7 @@ export default function PremiumNavbar() {
           {/* Logo */}
 
           <Link href="/" className="flex items-center gap-3 z-50 -ml-8">
-            <div className="relative w-[200px] h-12">
+            <div className="relative w-[280px] h-16">
               <Image
                 src="/images/sai_header_logo.png"
                 alt="SAI Logo"
@@ -193,15 +195,16 @@ export default function PremiumNavbar() {
 
           {/* Right Icons */}
           <div className="hidden md:flex items-center gap-6">
-            <Link
-              href="/admissions/apply"
-              className={`px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm ${isSolid
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className={`relative group overflow-hidden px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm ${isSolid
                 ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
                 : "bg-white text-black border-white hover:bg-[#DAA520] hover:text-black"
                 }`}
             >
-              Apply Now
-            </Link>
+              <span className="relative z-10">Apply Online</span>
+              <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 group-hover:animate-shine transition-all duration-700 group-hover:left-[100%]" />
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -290,16 +293,21 @@ export default function PremiumNavbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/admissions/apply"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-8 bg-[#DAA520] text-black px-10 py-3 font-bold uppercase tracking-widest"
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setIsModalOpen(true);
+              }}
+              className="mt-8 bg-[#DAA520] text-black px-10 py-3 font-bold uppercase tracking-widest relative overflow-hidden group"
             >
-              Apply Now
-            </Link>
+              <span className="relative z-10">Apply Online</span>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Application Modal */}
+      <ApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
