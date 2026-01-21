@@ -13,10 +13,23 @@ const slides = [
     heading: "GATEWAY TO EXCELLENCE",
     subtext: "Where Legacy Meets Future",
   },
+  {
+    type: "video",
+    src: "/saibuildingvideo.mp4",
+    heading: "SHAPING BRIGHTER FUTURES", // New Slide 2
+    subtext: "Nurturing Minds, Building Character",
+  },
+  {
+    type: "video",
+    src: "/saibuildingvideo.mp4",
+    heading: "INNOVATING EDUCATION", // New Slide 3
+    subtext: "Excellence in Every Endeavor",
+  },
 ];
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const startTimer = () => {
@@ -27,11 +40,16 @@ export default function HeroSlider() {
   };
 
   useEffect(() => {
+    setIsMounted(true);
     startTimer();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
+
+  if (!isMounted) {
+    return <div className="relative w-full h-screen overflow-hidden bg-black" />;
+  }
 
   const resetTimer = () => startTimer();
 
@@ -105,17 +123,36 @@ export default function HeroSlider() {
             variants={sentence}
             initial="hidden"
             animate="visible"
-            className="text-xl md:text-7xl lg:text-8xl font-heading font-black text-white uppercase tracking-tighter mb-4 leading-tight drop-shadow-lg"
+            className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white uppercase tracking-tighter mb-6 leading-none drop-shadow-lg whitespace-nowrap"
           >
-            {slides[currentSlide].heading.split("").map((char, index) => (
-              <motion.span key={index} variants={letter}>
-                {char}
-              </motion.span>
-            ))}
+            {(() => {
+              const words = slides[currentSlide].heading.split(" ");
+              return words.flatMap((word, wordIndex) => {
+                const isLastWord = wordIndex === words.length - 1;
+                const chars = word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={`${wordIndex}-${charIndex}`}
+                    variants={letter}
+                    className={isLastWord ? "text-[#8B0000]" : "text-white"}
+                  >
+                    {char}
+                  </motion.span>
+                ));
+
+                if (wordIndex < words.length - 1) {
+                  chars.push(
+                    <motion.span key={`space-${wordIndex}`} variants={letter}>
+                      &nbsp;
+                    </motion.span>
+                  );
+                }
+                return chars;
+              });
+            })()}
             <motion.span
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-              className="inline-block w-3 h-12 md:h-16 lg:h-20 bg-[#DAA520] ml-2 align-middle"
+              className="inline-block w-2 h-10 md:h-14 lg:h-20 bg-[#DAA520] ml-2 align-middle"
             />
           </motion.h1>
         </div>
@@ -124,7 +161,7 @@ export default function HeroSlider() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1 }}
-          className="text-xl md:text-2xl text-white/80 font-light mb-10 max-w-xl"
+          className="text-2xl md:text-4xl text-white/90 font-light mb-12 max-w-3xl"
         >
           {slides[currentSlide].subtext}
         </motion.p>
@@ -136,7 +173,7 @@ export default function HeroSlider() {
         >
           <Link
             href="/about-us"
-            className="inline-block px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-300 border border-white"
+            className="inline-block px-10 py-4 bg-[#8B0000] text-white font-bold uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-300 border border-[#8B0000] hover:border-black"
           >
             About Us
           </Link>

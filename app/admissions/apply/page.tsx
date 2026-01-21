@@ -12,7 +12,7 @@ export default function ApplyOnlinePage() {
             <PageHeader
                 title="Start Your Journey"
                 subtitle="Online Admissions"
-                imageSrc="/images/imgi_2_Building.png"
+                imageSrc="/images/imgi_13_Page12.png"
             />
 
             {/* Form Section */}

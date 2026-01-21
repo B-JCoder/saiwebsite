@@ -25,12 +25,12 @@ export default function PageHeader({
                     src={imageSrc}
                     alt={title}
                     fill
-                    className="object-cover opacity-60"
+                    className="object-cover opacity-100" // Increased opacity
                     priority
                 />
-                {/* Gradient Overlays for Readability and Depth */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+                {/* Lighter Gradient Overlays */}
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
             </div>
 
             {/* Content */}
@@ -38,29 +38,31 @@ export default function PageHeader({
                 className={`relative z-10 container mx-auto px-6 ${align === "left" ? "text-left" : "text-center"
                     }`}
             >
-                {subtitle && (
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                <div className="inline-block backdrop-blur-sm bg-black/10 p-8 rounded-2xl border border-white/10 shadow-2xl">
+                    {subtitle && (
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-[#DAA520] font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md"
+                        >
+                            {subtitle}
+                        </motion.p>
+                    )}
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-[#DAA520] font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md"
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     >
-                        {subtitle}
-                    </motion.p>
-                )}
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white uppercase tracking-tighter leading-none drop-shadow-2xl">
+                            {title}
+                        </h1>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                >
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-white uppercase tracking-tighter leading-none drop-shadow-2xl">
-                        {title}
-                    </h1>
-
-                    {/* Decorative Divider */}
-                    <div className={`mt-6 h-1 w-24 bg-[#DAA520] rounded-full ${align === "center" ? "mx-auto" : ""}`} />
-                </motion.div>
+                        {/* Decorative Divider */}
+                        <div className={`mt-6 h-1 w-24 bg-[#DAA520] rounded-full ${align === "center" ? "mx-auto" : ""}`} />
+                    </motion.div>
+                </div>
             </div>
 
             {/* Scroll Indicator (Optional, adds nice touch) */}
