@@ -153,21 +153,35 @@ export default function PremiumNavbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             {Object.entries(menuItems).map(([key, item]) => (
-              <div
-                key={key}
-                onMouseEnter={() => setHoveredMenu(key)}
-                className="relative py-4"
-              >
-                <button
-                  onClick={() => handleMenuClick(key, item.href)}
-                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${isSolid
+              key === "groups" ? (
+                <div
+                  key={key}
+                  onMouseEnter={() => setHoveredMenu(key)}
+                  className="relative py-4"
+                >
+                  <button
+                    onClick={() => handleMenuClick(key, item.href)}
+                    className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${isSolid
+                      ? "text-black hover:text-[#DAA520]"
+                      : "text-white hover:text-[#DAA520]"
+                      } transition-colors`}
+                  >
+                    {item.title} <ChevronDown size={14} />
+                  </button>
+                </div>
+              ) : (
+                <Link
+                  key={key}
+                  href={item.href}
+                  onMouseEnter={() => setHoveredMenu(null)}
+                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 py-4 ${isSolid
                     ? "text-black hover:text-[#DAA520]"
                     : "text-white hover:text-[#DAA520]"
                     } transition-colors`}
                 >
-                  {item.title} <ChevronDown size={14} />
-                </button>
-              </div>
+                  {item.title}
+                </Link>
+              )
             ))}
             {/* Restoring Missing Links */}
 
