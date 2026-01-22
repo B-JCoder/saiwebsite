@@ -80,7 +80,10 @@ const CorporateAbout = () => {
               </div>
 
               <Link href="/about-us">
-                <button suppressHydrationWarning className="px-8 py-3 border-2 border-[#800000] text-[#800000] font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all rounded-lg">
+                <button
+                  suppressHydrationWarning
+                  className="px-8 py-3 border-2 border-[#800000] text-[#800000] font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all rounded-lg"
+                >
                   Read Our Story
                 </button>
               </Link>
@@ -106,7 +109,7 @@ const CorporateAbout = () => {
                 }}
                 className="relative z-10"
               >
-                <div className="relative w-[400px] h-[400px] rounded-full overflow-hidden flex items-center justify-center drop-shadow-[0_20px_50px_rgba(218,165,32,0.3)] border-4 border-[#DAA520]">
+                <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden flex items-center justify-center drop-shadow-[0_20px_50px_rgba(218,165,32,0.3)] border-4 border-[#DAA520]">
                   <img
                     src="/images/sai_seal_fixed.jpg"
                     alt="SAI Seal 3D"

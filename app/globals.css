@@ -7,37 +7,41 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-heading: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans:
+    var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading:
+    var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --color-primary: #800000;
   /* Deep Maroon */
-  --color-primary-foreground: #FFFFFF;
+  --color-primary-foreground: #ffffff;
 
-  --color-secondary: #FFFFFF;
+  --color-secondary: #ffffff;
   --color-secondary-foreground: #800000;
 
-  --color-accent: #DAA520;
+  --color-accent: #daa520;
   /* Golden Rod / Mustard */
-  --color-accent-foreground: #FFFFFF;
+  --color-accent-foreground: #ffffff;
 
   --color-muted: oklch(0.97 0 0);
   --color-muted-foreground: oklch(0.556 0 0);
 
   --color-border: oklch(0.922 0 0);
   --color-input: oklch(0.922 0 0);
-  --color-ring: #DAA520;
+  --color-ring: #daa520;
 
   /* Shadcn/Sidebar Defaults */
   --color-sidebar: #800000;
-  --color-sidebar-foreground: #FFFFFF;
-  --color-sidebar-primary: #DAA520;
-  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-primary: #daa520;
+  --color-sidebar-primary-foreground: #ffffff;
   --color-sidebar-accent: #660000;
   /* Darker Maroon */
-  --color-sidebar-accent-foreground: #FFFFFF;
+  --color-sidebar-accent-foreground: #ffffff;
   --color-sidebar-border: #660000;
-  --color-sidebar-ring: #DAA520;
+  --color-sidebar-ring: #daa520;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -56,7 +60,7 @@
 
 .dark {
   --background: #000a1f;
-  --foreground: #FFFFFF;
+  --foreground: #ffffff;
 }
 
 @layer base {
@@ -64,16 +68,30 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
     /* Premium Grid & Gradient Background */
     background-color: #ffffff;
-    background-image: 
-        linear-gradient(rgba(128, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(128, 0, 0, 0.03) 1px, transparent 1px),
-        radial-gradient(at 0% 0%, hsla(353,100%,25%,0.08) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, hsla(45,100%,75%,0.15) 0px, transparent 50%);
-    background-size: 40px 40px, 40px 40px, cover, cover;
+    background-image:
+      linear-gradient(rgba(128, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(128, 0, 0, 0.03) 1px, transparent 1px),
+      radial-gradient(
+        at 0% 0%,
+        hsla(353, 100%, 25%, 0.08) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 100% 100%,
+        hsla(45, 100%, 75%, 0.15) 0px,
+        transparent 50%
+      );
+    background-size:
+      40px 40px,
+      40px 40px,
+      cover,
+      cover;
     background-attachment: fixed;
   }
 

@@ -126,7 +126,7 @@ export default function PremiumNavbar() {
           {/* Logo */}
 
           <Link href="/" className="flex items-center gap-3 z-50 -ml-8">
-            <div className="relative w-[280px] h-16">
+            <div className="relative w-[200px] md:w-[280px] h-12 md:h-16">
               <Image
                 src="/images/sai_header_logo.png"
                 alt="SAI Logo"

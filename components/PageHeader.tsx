@@ -18,7 +18,7 @@ export default function PageHeader({
   align = "center",
 }: PageHeaderProps) {
   return (
-    <div className="relative w-full h-[60vh] min-h-[400px] overflow-hidden flex items-center justify-center bg-black">
+    <div className="relative w-full h-[50vh] md:h-[60vh] min-h-[300px] md:min-h-[400px] overflow-hidden flex items-center justify-center bg-black">
       {/* Parallax Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
