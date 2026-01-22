@@ -110,7 +110,7 @@ export default function FacultyMarquee() {
           {[...facultyMembers, ...facultyMembers, ...facultyMembers].map(
             (member, i) => (
               <FacultyCard key={i} member={member} />
-            )
+            ),
           )}
         </div>
       </div>
@@ -142,6 +142,7 @@ function FacultyCard({ member }: { member: any }) {
           alt={member.name}
           fill
           className="object-cover transition-all duration-500"
+          quality={100}
         />
 
         {/* Glass Overlay for Text */}

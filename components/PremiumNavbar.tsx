@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-
 import Image from "next/image";
 
 import { Search, Globe, Menu, X, ChevronDown } from "lucide-react";
@@ -33,20 +32,7 @@ const menuItems = {
       },
     ],
   },
-  academics: {
-    title: "Academics",
-    href: "/academics", // Added generic href
-    columns: [
-      {
-        heading: "Faculty",
-        links: [{ name: "Distinguished Faculty", href: "/faculty" }],
-      },
-      {
-        heading: "Feature",
-        content: "State-of-the-art laboratories and digital classrooms.",
-      },
-    ],
-  },
+
   admissions: {
     title: "Admissions",
     href: "/admissions",
@@ -129,10 +115,11 @@ export default function PremiumNavbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSolid
-          ? "bg-white text-black shadow-md py-4"
-          : "bg-transparent text-white py-6"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isSolid
+            ? "bg-white text-black shadow-md py-4"
+            : "bg-transparent text-white py-6"
+        }`}
         onMouseLeave={() => setHoveredMenu(null)}
       >
         <div className="container mx-auto px-6 flex items-center justify-between relative">
@@ -152,7 +139,7 @@ export default function PremiumNavbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
-            {Object.entries(menuItems).map(([key, item]) => (
+            {Object.entries(menuItems).map(([key, item]) =>
               key === "groups" ? (
                 <div
                   key={key}
@@ -161,10 +148,11 @@ export default function PremiumNavbar() {
                 >
                   <button
                     onClick={() => handleMenuClick(key, item.href)}
-                    className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${isSolid
-                      ? "text-black hover:text-[#DAA520]"
-                      : "text-white hover:text-[#DAA520]"
-                      } transition-colors`}
+                    className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 ${
+                      isSolid
+                        ? "text-black hover:text-[#DAA520]"
+                        : "text-white hover:text-[#DAA520]"
+                    } transition-colors`}
                   >
                     {item.title} <ChevronDown size={14} />
                   </button>
@@ -174,33 +162,35 @@ export default function PremiumNavbar() {
                   key={key}
                   href={item.href}
                   onMouseEnter={() => setHoveredMenu(null)}
-                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 py-4 ${isSolid
-                    ? "text-black hover:text-[#DAA520]"
-                    : "text-white hover:text-[#DAA520]"
-                    } transition-colors`}
+                  className={`text-sm font-bold uppercase tracking-wide flex items-center gap-1 py-4 ${
+                    isSolid
+                      ? "text-black hover:text-[#DAA520]"
+                      : "text-white hover:text-[#DAA520]"
+                  } transition-colors`}
                 >
                   {item.title}
                 </Link>
-              )
-            ))}
+              ),
+            )}
             {/* Restoring Missing Links */}
-
 
             <Link
               href="/downloads"
-              className={`text-sm font-bold uppercase tracking-wide ${isSolid
-                ? "text-black hover:text-[#DAA520]"
-                : "text-white hover:text-[#DAA520]"
-                }`}
+              className={`text-sm font-bold uppercase tracking-wide ${
+                isSolid
+                  ? "text-black hover:text-[#DAA520]"
+                  : "text-white hover:text-[#DAA520]"
+              }`}
             >
               Downloads
             </Link>
             <Link
               href="/contact-us"
-              className={`text-sm font-bold uppercase tracking-wide ${isSolid
-                ? "text-black hover:text-[#DAA520]"
-                : "text-white hover:text-[#DAA520]"
-                }`}
+              className={`text-sm font-bold uppercase tracking-wide ${
+                isSolid
+                  ? "text-black hover:text-[#DAA520]"
+                  : "text-white hover:text-[#DAA520]"
+              }`}
             >
               Contact
             </Link>
@@ -210,12 +200,13 @@ export default function PremiumNavbar() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="/admissions/apply"
-              className={`relative group overflow-hidden px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm inline-block ${isSolid
-                ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
-                : "bg-white text-black border-white hover:bg-[#DAA520] hover:text-black"
-                }`}
+              className={`relative group overflow-hidden px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm inline-block ${
+                isSolid
+                  ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
+                  : "bg-white text-black border-white hover:bg-[#DAA520] hover:text-black"
+              }`}
             >
-              <span className="relative z-10">Apply Online</span>
+              <span className="relative z-10">Admissions Online</span>
               <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 group-hover:animate-shine transition-all duration-700 group-hover:left-[100%]" />
             </Link>
           </div>
@@ -266,7 +257,7 @@ export default function PremiumNavbar() {
                         </p>
                       )}
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </motion.div>
@@ -313,7 +304,7 @@ export default function PremiumNavbar() {
               }}
               className="mt-8 bg-[#DAA520] text-black px-10 py-3 font-bold uppercase tracking-widest relative overflow-hidden group"
             >
-              <span className="relative z-10">Apply Online</span>
+              <span className="relative z-10">Admissions Online</span>
             </Link>
           </motion.div>
         )}

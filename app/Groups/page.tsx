@@ -1,10 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaFlask, FaCalculator, FaBookOpen, FaArrowRight, FaMicroscope, FaLaptopCode, FaAtom, FaTimes, FaCheckCircle, FaGraduationCap } from "react-icons/fa";
+import {
+  FaFlask,
+  FaCalculator,
+  FaBookOpen,
+  FaArrowRight,
+  FaMicroscope,
+  FaLaptopCode,
+  FaAtom,
+  FaTimes,
+  FaCheckCircle,
+  FaGraduationCap,
+} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Suspense } from 'react';
+import { Suspense } from "react";
+import PageHeader from "@/components/PageHeader";
 
 // Data
 const groupsData = [
@@ -13,41 +25,126 @@ const groupsData = [
     title: "Pre-Medical",
     icon: FaMicroscope,
     desc: "Comprehensive biology and chemistry programs designed for future medical professionals.",
-    subjects: ["Biology", "Physics", "Chemistry", "English", "Urdu", "Islamiat"],
+    subjects: [
+      "Biology",
+      "Physics",
+      "Chemistry",
+      "English",
+      "Urdu",
+      "Islamiat",
+    ],
     color: "bg-red-50 text-[#800000]",
-    details: "Our Pre-Medical program is rigorously designed to prepare students for entrance into top medical colleges (MBBS/BDS). We focus on conceptual clarity in Biology, Physics, and Chemistry, ensuring students excel in both Board Exams and MDCAT.",
-    scope: ["MBBS (Doctor)", "BDS (Dentist)", "D-Pharmacy", "Biotechnology", "Microbiology", "Physiotherapy"],
+    details:
+      "Our Pre-Medical program is rigorously designed to prepare students for entrance into top medical colleges (MBBS/BDS). We focus on conceptual clarity in Biology, Physics, and Chemistry, ensuring students excel in both Board Exams and MDCAT.",
+    scope: [
+      "MBBS (Doctor)",
+      "BDS (Dentist)",
+      "D-Pharmacy",
+      "Biotechnology",
+      "Microbiology",
+      "Physiotherapy",
+    ],
   },
   {
     id: "pre-engineering",
     title: "Pre-Engineering",
     icon: FaAtom,
     desc: "Advanced mathematics and physics curricula for aspiring engineers and innovators.",
-    subjects: ["Mathematics", "Physics", "Chemistry", "English", "Urdu", "Islamiat"],
+    subjects: [
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "English",
+      "Urdu",
+      "Islamiat",
+    ],
     color: "bg-blue-50 text-blue-900",
-    details: "The Pre-Engineering track lays a solid foundation in analytical thinking and problem-solving. With a strong emphasis on Mathematics and Physics, we prepare students for ECAT and admission into Pakistan's premier engineering universities like NED, NUST, and UET.",
-    scope: ["Software Engineering", "Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Architecture", "Aviation"],
-  },
-  {
-    id: "computer-science",
-    title: "Computer Science",
-    icon: FaLaptopCode,
-    desc: "Cutting-edge computer science education focusing on programming and logic.",
-    subjects: ["Computer Science", "Mathematics", "Physics / Statistics", "English", "Urdu", "Islamiat"],
-    color: "bg-slate-50 text-slate-800",
-    details: "In the digital age, Computer Science is the gateway to the future. Our ICS program offers a blend of programming, logic, and mathematics. Students can choose between Physics or Statistics combinations to tailor their path towards Software Engineering or Data Science.",
-    scope: ["Software Development", "Data Science", "Artificial Intelligence", "Cyber Security", "Robotics", "IT Management"],
+    details:
+      "The Pre-Engineering track lays a solid foundation in analytical thinking and problem-solving. With a strong emphasis on Mathematics and Physics, we prepare students for ECAT and admission into Pakistan's premier engineering universities like NED, NUST, and UET.",
+    scope: [
+      "Software Engineering",
+      "Civil Engineering",
+      "Mechanical Engineering",
+      "Electrical Engineering",
+      "Architecture",
+      "Aviation",
+    ],
   },
   {
     id: "commerce",
     title: "Commerce",
     icon: FaCalculator,
     desc: "Building foundations in accounting, economics, and business management.",
-    subjects: ["Accounting", "Principles of Commerce", "Economics", "Business Math", "English", "Urdu"],
+    subjects: [
+      "Accounting",
+      "Principles of Commerce",
+      "Economics",
+      "Business Math",
+      "English",
+      "Urdu",
+    ],
     color: "bg-emerald-50 text-emerald-800",
-    details: "Our Commerce program is designed for future business leaders and entrepreneurs. We provide deep insights into Accounting, Economics, and Business Management, preparing students for CA, ACCA, BBA, and MBA programs.",
-    scope: ["Chartered Accountancy (CA)", "ACCA", "Business Administration (BBA)", "Banking & Finance", "Entrepreneurship", "Marketing"],
-  }
+    details:
+      "Our Commerce program is designed for future business leaders and entrepreneurs. We provide deep insights into Accounting, Economics, and Business Management, preparing students for CA, ACCA, BBA, and MBA programs.",
+    scope: [
+      "Chartered Accountancy (CA)",
+      "ACCA",
+      "Business Administration (BBA)",
+      "Banking & Finance",
+      "Entrepreneurship",
+      "Marketing",
+    ],
+  },
+  {
+    id: "computer-science-with-physics",
+    title: "Computer Science (With Physics)",
+    icon: FaLaptopCode,
+    desc: "Cutting-edge computer science education focusing on programming and logic.",
+    subjects: [
+      "Computer Science",
+      "Mathematics",
+      "Physics",
+      "English",
+      "Urdu",
+      "Islamiat",
+    ],
+    color: "bg-slate-50 text-slate-800",
+    details:
+      "In the digital age, Computer Science is the gateway to the future. Our ICS program offers a blend of programming, logic, and mathematics. Students can choose between Physics or Statistics combinations to tailor their path towards Software Engineering or Data Science.",
+    scope: [
+      "Software Development",
+      "Data Science",
+      "Artificial Intelligence",
+      "Cyber Security",
+      "Robotics",
+      "IT Management",
+    ],
+  },
+  {
+    id: "computer-science-with-statistics",
+    title: "Computer Science (With Statistics)",
+    icon: FaLaptopCode,
+    desc: "Cutting-edge computer science education focusing on programming and logic.",
+    subjects: [
+      "Computer Science",
+      "Mathematics",
+      "Statistics",
+      "English",
+      "Urdu",
+      "Islamiat",
+    ],
+    color: "bg-slate-50 text-slate-800",
+    details:
+      "In the digital age, Computer Science is the gateway to the future. Our ICS program offers a blend of programming, logic, and mathematics. Students can choose between Physics or Statistics combinations to tailor their path towards Software Engineering or Data Science.",
+    scope: [
+      "Software Development",
+      "Data Science",
+      "Artificial Intelligence",
+      "Cyber Security",
+      "Robotics",
+      "IT Management",
+    ],
+  },
 ];
 
 function GroupsContent() {
@@ -77,40 +174,19 @@ function GroupsContent() {
     router.push("/groups", { scroll: false });
   };
 
-  const selectedGroup = groupsData.find(g => g.id === selectedId);
+  const selectedGroup = groupsData.find((g) => g.id === selectedId);
 
   return (
     <div className="bg-background min-h-screen relative">
       {/* Hero Section */}
-      <div className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#800000] to-black opacity-90 z-10" />
-        <img
-          src="/images/imgi_13_Page12.png"
-          alt="Academic Excellence"
-          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50"
-        />
-        <div className="absolute inset-0 z-20 flex items-center justify-center flex-col text-center px-4 pt-20">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="uppercase text-sm md:text-base font-bold text-[#DAA520] tracking-[0.3em] mb-4 block"
-          >
-            Academic Pathways
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-heading font-black text-white uppercase tracking-tighter mb-6"
-          >
-            Choose Your Future
-          </motion.h1>
-          <div className="w-24 h-1 bg-[#DAA520] mx-auto"></div>
-        </div>
-      </div>
+      <PageHeader
+        title="Academic Pathways"
+        subtitle="Choose Your Future"
+        imageSrc="/images/imgi_13_Page12.png"
+      />
 
       <div className="container mx-auto px-6 py-24 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-10">
           {groupsData.map((group, idx) => (
             <motion.div
               key={group.id}
@@ -120,11 +196,17 @@ function GroupsContent() {
               transition={{ delay: idx * 0.1 }}
               className="bg-white/60 backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(128,0,0,0.1)] transition-all border border-white/50 group flex flex-col items-start h-full hover:-translate-y-2 duration-300"
             >
-              <div className={`w-16 h-16 ${group.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-[#800000] group-hover:text-white transition-colors shadow-sm`}>
+              <div
+                className={`w-16 h-16 ${group.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-[#800000] group-hover:text-white transition-colors shadow-sm`}
+              >
                 <group.icon />
               </div>
-              <h3 className="text-2xl font-bold text-black mb-3 uppercase tracking-tight group-hover:text-[#800000] transition-colors">{group.title}</h3>
-              <p className="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">{group.desc}</p>
+              <h3 className="text-2xl font-bold text-black mb-3 uppercase tracking-tight group-hover:text-[#800000] transition-colors">
+                {group.title}
+              </h3>
+              <p className="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">
+                {group.desc}
+              </p>
 
               <button
                 onClick={() => handleOpen(group.id)}
@@ -155,7 +237,9 @@ function GroupsContent() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header Image */}
-              <div className={`h-40 md:h-60 w-full ${selectedGroup.color.split(' ')[0]} relative flex items-center justify-center overflow-hidden`}>
+              <div
+                className={`h-40 md:h-60 w-full ${selectedGroup.color.split(" ")[0]} relative flex items-center justify-center overflow-hidden`}
+              >
                 <div className="absolute inset-0 opacity-10 pattern-dots" />
                 <selectedGroup.icon className="text-9xl opacity-20" />
                 <div className="absolute bottom-6 left-6 md:left-10 z-10">
@@ -173,7 +257,6 @@ function GroupsContent() {
 
               {/* Modal Content */}
               <div className="p-8 md:p-12 space-y-10">
-
                 {/* Description */}
                 <div>
                   <h3 className="text-xl font-bold text-[#800000] uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -187,10 +270,15 @@ function GroupsContent() {
                 <div className="grid md:grid-cols-2 gap-10">
                   {/* Subjects */}
                   <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                    <h4 className="text-lg font-bold text-black uppercase tracking-widest mb-4">Core Subjects</h4>
+                    <h4 className="text-lg font-bold text-black uppercase tracking-widest mb-4">
+                      Core Subjects
+                    </h4>
                     <ul className="space-y-3">
                       {selectedGroup.subjects.map((sub, idx) => (
-                        <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-3 text-gray-700 font-medium"
+                        >
                           <FaCheckCircle className="text-[#DAA520] shrink-0" />
                           {sub}
                         </li>
@@ -200,10 +288,15 @@ function GroupsContent() {
 
                   {/* Scope */}
                   <div className="bg-[#800000]/5 p-6 rounded-2xl border border-[#800000]/10">
-                    <h4 className="text-lg font-bold text-[#800000] uppercase tracking-widest mb-4">Future Career Scope</h4>
+                    <h4 className="text-lg font-bold text-[#800000] uppercase tracking-widest mb-4">
+                      Future Career Scope
+                    </h4>
                     <ul className="space-y-3">
                       {selectedGroup.scope.map((item, idx) => (
-                        <li key={idx} className="flex items-center gap-3 text-[#800000] font-medium">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-3 text-[#800000] font-medium"
+                        >
                           <FaGraduationCap className="shrink-0" />
                           {item}
                         </li>
@@ -215,14 +308,13 @@ function GroupsContent() {
                 {/* Download Button or CTA */}
                 <div className="flex justify-end pt-6 border-t border-gray-100">
                   <button
-                    onClick={() => router.push('/admissions')}
+                    onClick={() => router.push("/admissions")}
                     className="bg-[#800000] text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-[#DAA520] transition-colors shadow-lg"
                   >
                     Enrol in {selectedGroup.title}
                   </button>
                 </div>
               </div>
-
             </motion.div>
           </motion.div>
         )}

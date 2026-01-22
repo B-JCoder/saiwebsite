@@ -48,7 +48,9 @@ export default function HeroSlider() {
   }, []);
 
   if (!isMounted) {
-    return <div className="relative w-full h-screen overflow-hidden bg-black" />;
+    return (
+      <div className="relative w-full h-screen overflow-hidden bg-black" />
+    );
   }
 
   const resetTimer = () => startTimer();
@@ -143,7 +145,7 @@ export default function HeroSlider() {
                   chars.push(
                     <motion.span key={`space-${wordIndex}`} variants={letter}>
                       &nbsp;
-                    </motion.span>
+                    </motion.span>,
                   );
                 }
                 return chars;

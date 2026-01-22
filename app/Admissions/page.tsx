@@ -265,10 +265,10 @@ export default function AdmissionsPage() {
             {/* Rows */}
             <div className="divide-y divide-gray-100">
               {[
-                { label: "Admission Fee (One Time)", amount: "PKR 15,000" },
-                { label: "Tuition Fee (Monthly)", amount: "PKR 5,500" },
-                { label: "Lab Charges (Yearly)", amount: "PKR 3,000" },
-                { label: "Examination Fee", amount: "PKR 2,000" },
+                { label: "Admission Fee (One Time)", amount: "PKR __" },
+                { label: "Tuition Fee (Monthly)", amount: "PKR __" },
+                { label: "Lab Charges (Yearly)", amount: "PKR __" },
+                { label: "Examination Fee", amount: "PKR __" },
               ].map((row, i) => (
                 <div
                   key={i}
@@ -286,7 +286,7 @@ export default function AdmissionsPage() {
                 Total at Admission
               </span>
               <span className="text-black font-black text-3xl md:text-4xl">
-                PKR 25,500
+                PKR __
               </span>
             </div>
           </div>
