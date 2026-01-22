@@ -12,17 +12,17 @@ import Link from "next/link";
 
 const CorporateAbout = () => {
   return (
-    <section className="py-20 md:py-32 bg-transparent text-[#333]">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2.5rem] p-8 md:p-16">
-          <div className="flex flex-col md:flex-row gap-16 items-start">
+    <section className="py-20 md:py-32 bg-transparent text-[#333] ">
+      <div className="container mx-auto px-4 md:px-12">
+        <div className="bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2.5rem] p-6 md:p-16">
+          <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
             {/* Left Column: Text */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="md:w-1/2"
+              className="md:w-1/2 text-center md:text-left"
             >
               <span className="text-[#800000] font-bold text-sm uppercase tracking-widest mb-4 block">
                 About Us
@@ -109,7 +109,7 @@ const CorporateAbout = () => {
                 }}
                 className="relative z-10"
               >
-                <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden flex items-center justify-center drop-shadow-[0_20px_50px_rgba(218,165,32,0.3)] border-4 border-[#DAA520]">
+                <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden flex items-center justify-center drop-shadow-[0_20px_50px_rgba(218,165,32,0.3)] border-4 border-[#DAA520]">
                   <img
                     src="/images/sai_seal_fixed.jpg"
                     alt="SAI Seal 3D"

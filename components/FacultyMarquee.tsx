@@ -91,9 +91,9 @@ const facultyMembers = [
 
 export default function FacultyMarquee() {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-6 mb-12 text-center">
-        <h2 className="text-4xl md:text-5xl font-heading font-black text-[#800000] uppercase tracking-tighter">
+    <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 mb-8 md:mb-12 text-center">
+        <h2 className="text-3xl md:text-5xl font-heading font-black text-[#800000] uppercase tracking-tighter">
           Distinguished Faculty
         </h2>
         <div className="w-24 h-1 bg-[#DAA520] mx-auto mt-4 rounded-full" />
@@ -135,18 +135,19 @@ export default function FacultyMarquee() {
 function FacultyCard({ member }: { member: any }) {
   return (
     <TiltCard>
-      <div className="relative w-[300px] h-[400px] flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer group border border-transparent hover:border-[#DAA520]/50 transition-all duration-300 shadow-md hover:shadow-[0_0_30px_rgba(218,165,32,0.3)] bg-white">
+      <div className="relative w-[260px] h-[340px] md:w-[300px] md:h-[400px] flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer group border border-transparent hover:border-[#DAA520]/50 transition-all duration-300 shadow-md hover:shadow-[0_0_30px_rgba(218,165,32,0.3)] bg-white">
         {/* Image */}
         <Image
           src={member.image}
           alt={member.name}
           fill
+          sizes="(max-width: 768px) 260px, 300px"
           className="object-cover transition-all duration-500"
           quality={100}
         />
 
         {/* Glass Overlay for Text */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-md border-t border-white/20 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-md border-t border-white/20 p-4 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
           <h3 className="text-lg font-bold text-white group-hover:text-[#DAA520] transition-colors drop-shadow-md">
             {member.name}
           </h3>

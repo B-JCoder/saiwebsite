@@ -21,7 +21,9 @@ export default function ContactUs() {
             <div className="space-y-8">
               <div className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full border border-gray-100 flex flex-col justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-[#8B0000] pl-4">Contact Information</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-[#8B0000] pl-4">
+                    Contact Information
+                  </h2>
 
                   <div className="space-y-8">
                     <div className="flex items-start gap-6 group">
@@ -29,8 +31,12 @@ export default function ContactUs() {
                         <FaMapMarkerAlt />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">Campus Address</h3>
-                        <p className="text-gray-500 leading-relaxed">Federal B Area, Block-2, Karachi.</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          Campus Address
+                        </h3>
+                        <p className="text-gray-500 leading-relaxed">
+                          Federal B Area, Block-2, Karachi.
+                        </p>
                       </div>
                     </div>
 
@@ -39,8 +45,12 @@ export default function ContactUs() {
                         <FaPhone />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">Phone</h3>
-                        <p className="text-gray-500 leading-relaxed">+92 21 36343542</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          Phone
+                        </h3>
+                        <p className="text-gray-500 leading-relaxed">
+                          +92 21 36343542
+                        </p>
                       </div>
                     </div>
 
@@ -49,8 +59,12 @@ export default function ContactUs() {
                         <FaEnvelope />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">Email</h3>
-                        <p className="text-gray-500 leading-relaxed">info@siradamjee.edu.pk</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          Email
+                        </h3>
+                        <p className="text-gray-500 leading-relaxed">
+                          info@siradamjee.edu.pk
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -58,26 +72,47 @@ export default function ContactUs() {
 
                 {/* Decorative Bottom branding */}
                 <div className="mt-12 pt-6 border-t border-gray-100">
-                  <p className="text-xs text-gray-400 font-bold tracking-widest uppercase">Sir Adamjee Institute</p>
+                  <p className="text-xs text-gray-400 font-bold tracking-widest uppercase">
+                    Sir Adamjee Institute
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form Card */}
             <div className="bg-white p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-yellow-500 pl-4">Send us a Message</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8 border-l-4 border-yellow-500 pl-4">
+                Send us a Message
+              </h2>
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Your Name</label>
-                  <input type="text" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all" placeholder="John Doe" />
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all"
+                    placeholder="Enter Name"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Your Email</label>
-                  <input type="email" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all" placeholder="john@example.com" />
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all"
+                    placeholder="Enter Email  "
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Message</label>
-                  <textarea className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all h-40 resize-none" placeholder="How can we help you?"></textarea>
+                  <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                    Message
+                  </label>
+                  <textarea
+                    className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] transition-all h-40 resize-none"
+                    placeholder="How can we help you?"
+                  ></textarea>
                 </div>
                 <button className="w-full py-4 bg-[#8B0000] text-white font-bold uppercase tracking-widest rounded-xl hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-[#8B0000]/20">
                   Submit Message
@@ -88,7 +123,9 @@ export default function ContactUs() {
 
           {/* Map Section */}
           <div className="mt-20">
-            <h3 className="text-center text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">Find Us On Map</h3>
+            <h3 className="text-center text-xl font-bold text-gray-400 mb-8 uppercase tracking-widest">
+              Find Us On Map
+            </h3>
             <div className="w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 hover:shadow-3xl transition-shadow duration-500">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14476.574637651765!2d67.0673418!3d24.9351049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f1130d2235d%3A0xe5d0506041040854!2sBlock%202%20Gulberg%20Town%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1705353000000!5m2!1sen!2s"
