@@ -247,7 +247,7 @@ export default function AdmissionsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[#DAA520] mb-4">
-              Fee Structure
+              Fee Structures
             </h2>
             <p className="text-gray-400">
               Transparent and affordable investment in your future.

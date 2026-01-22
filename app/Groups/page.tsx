@@ -186,7 +186,7 @@ function GroupsContent() {
       />
 
       <div className="container mx-auto px-6 py-24 relative z-10">
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-9">
           {groupsData.map((group, idx) => (
             <motion.div
               key={group.id}
