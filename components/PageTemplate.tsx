@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function PageTemplate({ title, children }: { title: string, children: React.ReactNode }) {
     return (
         <div className="pt-40 pb-24 min-h-screen bg-background">
