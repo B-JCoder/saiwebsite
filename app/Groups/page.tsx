@@ -165,13 +165,13 @@ function GroupsContent() {
   // Handle Open
   const handleOpen = (id: string) => {
     setSelectedId(id);
-    router.push(`/groups?id=${id}`, { scroll: false });
+    router.push(`/Groups?id=${id}`, { scroll: false });
   };
 
   // Handle Close
   const handleClose = () => {
     setSelectedId(null);
-    router.push("/groups", { scroll: false });
+    router.push("/Groups", { scroll: false });
   };
 
   const selectedGroup = groupsData.find((g) => g.id === selectedId);

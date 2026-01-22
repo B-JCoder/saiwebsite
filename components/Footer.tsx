@@ -94,7 +94,9 @@ const Footer = () => {
                       href={
                         item === "Home"
                           ? "/"
-                          : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                          : item === "Admissions"
+                            ? "/Admissions"
+                            : `/${item.toLowerCase().replace(/\s+/g, "-")}`
                       }
                       className="group flex items-center gap-3 text-gray-400 hover:text-[#DAA520] transition-all duration-300 w-fit"
                     >

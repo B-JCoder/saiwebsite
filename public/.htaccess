@@ -2,9 +2,8 @@
   RewriteEngine On
   RewriteBase /
 
-  # Serve HTML files without extensions
+  # Serve HTML files without extensions (Priority over directories)
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ $1.html [L]
 

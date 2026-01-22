@@ -27,9 +27,9 @@ const Navbar = () => {
     { name: "About Us", href: "/about-us" },
     { name: "Mission", href: "/mission" },
     { name: "Faculty", href: "/faculty" },
-    { name: "Admissions", href: "/admissions" },
-    { name: "Academics", href: "#", hasDropdown: true }, // Example dropdown trigger
-    { name: "Contact", href: "/contact" },
+    { name: "Admissions", href: "/Admissions" },
+    { name: "Groups", href: "/Groups" },
+    { name: "Contact", href: "/contact-us" },
   ];
 
   return (
@@ -68,9 +68,6 @@ const Navbar = () => {
                   className={`flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors hover:text-accent ${scrolled ? "text-white" : "text-white"}`}
                 >
                   {link.name}
-                  {link.hasDropdown && (
-                    <FaChevronDown className="text-[10px]" />
-                  )}
                 </Link>
 
                 {/* Animated Underline */}
@@ -82,7 +79,7 @@ const Navbar = () => {
           {/* Action Button & Toggle */}
           <div className="flex items-center gap-4">
             <Link
-              href="/admissions"
+              href="/Admissions"
               className={`hidden md:flex px-6 py-2.5 font-bold rounded-full transition-all uppercase text-xs tracking-widest hover:scale-105 ${
                 scrolled
                   ? "bg-accent text-primary shadow-lg hover:bg-white"
@@ -130,7 +127,7 @@ const Navbar = () => {
             ))}
 
             <Link
-              href="/admissions"
+              href="/Admissions"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-4 px-10 py-4 bg-accent text-primary font-bold rounded-full text-lg uppercase tracking-widest shadow-xl"
             >

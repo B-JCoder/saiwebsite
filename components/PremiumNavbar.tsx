@@ -35,20 +35,20 @@ const menuItems = {
 
   admissions: {
     title: "Admissions",
-    href: "/admissions",
+    href: "/Admissions",
     columns: [
       {
         heading: "Application",
         links: [
-          { name: "Apply Online", href: "/admissions/apply" },
-          { name: "How to Apply", href: "/admissions" },
+          { name: "Apply Online", href: "/Admissions/apply" },
+          { name: "How to Apply", href: "/Admissions" },
         ],
       },
       {
         heading: "Information",
         links: [
-          { name: "Eligibility Criteria", href: "/admissions" },
-          { name: "Fee Structure", href: "/admissions" },
+          { name: "Eligibility Criteria", href: "/Admissions" },
+          { name: "Fee Structure", href: "/Admissions" },
         ],
       },
       {
@@ -59,15 +59,15 @@ const menuItems = {
   },
   groups: {
     title: "Groups",
-    href: "/groups", // Added generic href
+    href: "/Groups", // Added generic href
     columns: [
       {
         heading: "Academic Pathways",
         links: [
-          { name: "Pre-Medical", href: "/groups/pre-medical" },
-          { name: "Pre-Engineering", href: "/groups/pre-engineering" },
-          { name: "Computer Science", href: "/groups/computer-science" },
-          { name: "Commerce", href: "/groups/commerce" },
+          { name: "Pre-Medical", href: "/Groups/pre-medical" },
+          { name: "Pre-Engineering", href: "/Groups/pre-engineering" },
+          { name: "Computer Science", href: "/Groups/computer-science" },
+          { name: "Commerce", href: "/Groups/commerce" },
         ],
       },
       {
@@ -199,7 +199,7 @@ export default function PremiumNavbar() {
           {/* Right Icons */}
           <div className="hidden md:flex items-center gap-6">
             <Link
-              href="/admissions/apply"
+              href="/Admissions/apply"
               className={`relative group overflow-hidden px-6 py-2.5 font-bold uppercase text-xs tracking-wider border transition-colors rounded-sm inline-block ${
                 isSolid
                   ? "bg-[#DAA520] text-black border-[#DAA520] hover:bg-black hover:text-white"
@@ -285,7 +285,7 @@ export default function PremiumNavbar() {
               { name: "Home", href: "/" },
               { name: "About", href: "/about-us" },
               { name: "Mission", href: "/mission" },
-              { name: "Admissions", href: "/admissions" },
+              { name: "Admissions", href: "/Admissions" },
               { name: "Contact", href: "/contact" },
             ].map((link) => (
               <Link
@@ -298,7 +298,7 @@ export default function PremiumNavbar() {
               </Link>
             ))}
             <Link
-              href="/admissions/apply"
+              href="/Admissions/apply"
               onClick={() => {
                 setMobileMenuOpen(false);
               }}
