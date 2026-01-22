@@ -6,6 +6,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import PrincipalMessage from "@/components/PrincipalMessage";
 import LifeAtSAI from "@/components/LifeAtSAI";
 import ParallaxSection from "@/components/ParallaxSection";
+import FooterAdmission from "@/components/FooterAdmission";
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
         <FacultyMarquee />
 
         <LifeAtSAI />
+
+        <FooterAdmission />
       </div>
     </SmoothScroll>
   );
