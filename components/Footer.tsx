@@ -1,170 +1,207 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaInstagram,
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-black text-white pt-24 pb-12 border-t border-[#DAA520]/30 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
+    <footer className="relative pt-32 pb-12 overflow-hidden bg-[#050505]">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#800000]/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#DAA520]/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-20">
-          {/* Brand Column */}
-          <div className="space-y-8">
-            <div>
-              <div className="w-24 h-24 mb-6 rounded-full overflow-hidden border-2 border-[#DAA520]">
-                <Image
-                  src="/images/sai_seal_fixed.jpg"
-                  alt="Sir Adamjee Institute Seal"
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-cover"
-                />
+      {/* Glass Container */}
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[3rem] p-8 md:p-16 shadow-2xl overflow-hidden relative group">
+          {/* Subtle Shine Effect */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+            {/* 1. Brand Section */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[#DAA520] shadow-[0_0_20px_rgba(218,165,32,0.3)]">
+                  <Image
+                    src="/images/sai_seal_fixed.jpg"
+                    alt="SAI Seal"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-xl leading-none tracking-tight">
+                    Sir Adamjee <br />{" "}
+                    <span className="text-[#DAA520]">Institute</span>
+                  </h3>
+                  <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-medium">
+                    Since 2005
+                  </p>
+                </div>
               </div>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed font-light max-w-xs">
-              A premier educational institution dedicated to fostering academic
-              excellence and character building. Empowering students for a
-              brighter tomorrow.
-            </p>
-            <div className="flex gap-4">
-              <a
-                href="https://www.facebook.com/siradamjee.edu.pk/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-white/10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-[#800000] transition-all duration-300"
-              >
-                <FaFacebook size={14} />
-              </a>
-              <a
-                href="https://www.instagram.com/siradamjeeinstitute/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-white/10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-[#800000] transition-all duration-300"
-              >
-                <FaInstagram size={14} />
-              </a>
-            </div>
-          </div>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Dedicated to fostering academic excellence and character
+                development in a state-of-the-art learning environment.
+              </p>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-bold mb-8 uppercase tracking-[0.2em] text-[#800000]">
-              Quick Links
-            </h4>
-            <ul className="space-y-4 text-sm text-gray-400">
-              {[
-                "Home",
-                "About Us",
-                "Mission",
-                "Faculty",
-                "Admissions",
-                "Contact",
-              ].map((link) => (
-                <li key={link}>
-                  <Link
-                    href={`/${link === "Home"
-                      ? ""
-                      : link.toLowerCase().replace(" ", "-")
-                      }`}
-                    className="hover:text-[#800000] transition-colors flex items-center gap-2 group"
+              {/* Socials */}
+              <div className="flex gap-4 pt-2">
+                {[
+                  {
+                    icon: FaFacebookF,
+                    url: "https://www.facebook.com/siradamjee.edu.pk/",
+                  },
+                  {
+                    icon: FaInstagram,
+                    url: "https://www.instagram.com/siradamjeeinstitute/",
+                  },
+                ].map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-[#800000] hover:text-white hover:border-[#800000] hover:scale-110 transition-all duration-300 shadow-lg"
                   >
-                    <span className="w-0 group-hover:w-2 h-[1px] bg-[#800000] transition-all duration-300"></span>
+                    <social.icon size={16} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. Quick Links */}
+            <div>
+              <h4 className="text-lg font-bold text-white mb-8 border-l-4 border-[#800000] pl-3 uppercase tracking-wider">
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                {[
+                  "Home",
+                  "About Us",
+                  "Faculty",
+                  "Admissions",
+                  "Contact Us",
+                ].map((item) => (
+                  <li key={item}>
+                    <Link
+                      href={
+                        item === "Home"
+                          ? "/"
+                          : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                      }
+                      className="group flex items-center gap-3 text-gray-400 hover:text-[#DAA520] transition-all duration-300 w-fit"
+                    >
+                      <FaArrowRight
+                        size={10}
+                        className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#800000]"
+                      />
+                      <span className="group-hover:translate-x-2 transition-transform duration-300 font-medium text-sm">
+                        {item}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 3. Contact Info */}
+            <div>
+              <h4 className="text-lg font-bold text-white mb-8 border-l-4 border-[#800000] pl-3 uppercase tracking-wider">
+                Contact
+              </h4>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white/5 rounded-lg text-[#DAA520]">
+                    <FaMapMarkerAlt size={16} />
+                  </div>
+                  <div>
+                    <h5 className="text-white font-bold text-sm mb-1 uppercase tracking-wide">
+                      Address
+                    </h5>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      ST-11A, Block 2, Hussainabad, F.B Area, Karachi.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white/5 rounded-lg text-[#DAA520]">
+                    <FaPhone size={16} />
+                  </div>
+                  <div>
+                    <h5 className="text-white font-bold text-sm mb-1 uppercase tracking-wide">
+                      Phone
+                    </h5>
+                    <p className="text-gray-400 text-sm">+92 21 36343541-2</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white/5 rounded-lg text-[#DAA520]">
+                    <FaEnvelope size={16} />
+                  </div>
+                  <div>
+                    <h5 className="text-white font-bold text-sm mb-1 uppercase tracking-wide">
+                      Email
+                    </h5>
+                    <p className="text-gray-400 text-sm">
+                      info@siradamjee.edu.pk
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Map / Highlight */}
+            <div className="flex flex-col h-full">
+              <h4 className="text-lg font-bold text-white mb-8 border-l-4 border-[#800000] pl-3 uppercase tracking-wider">
+                Location
+              </h4>
+              <div className="rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl flex-grow min-h-[160px] relative group/map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14476.574637651765!2d67.0673418!3d24.9351049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f1130d2235d%3A0xe5d0506041040854!2sBlock%202%20Gulberg%20Town%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1705353000000!5m2!1sen!2s"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: "grayscale(100%) invert(90%)" }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="group-hover/map:filter-none transition-all duration-700"
+                ></iframe>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[#800000]/20 mix-blend-multiply pointer-events-none group-hover/map:opacity-0 transition-opacity duration-500" />
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest text-center md:text-left">
+              © {currentYear} Sir Adamjee Institute. All Rights Reserved.
+            </p>
+            <div className="flex gap-8">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+                (link) => (
+                  <a
+                    key={link}
+                    href="#"
+                    className="text-gray-500 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors duration-300"
+                  >
                     {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-sm font-bold mb-8 uppercase tracking-[0.2em] text-[#800000]">
-              Contact Info
-            </h4>
-            <div className="space-y-6 text-sm text-gray-400">
-              <div className="flex items-start gap-4 group">
-                <div className="mt-1 p-2 bg-white/5 rounded-full group-hover:bg-[#800000] group-hover:text-white transition-colors">
-                  <FaMapMarkerAlt size={12} />
-                </div>
-                <span className="flex-1 leading-relaxed">
-                  Federal B Area, Block-2, Karachi.
-                </span>
-              </div>
-              <div className="flex items-center gap-4 group">
-                <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#800000] group-hover:text-white transition-colors">
-                  <FaPhone size={12} />
-                </div>
-                <span className="group-hover:text-[#800000] transition-colors">
-                  +92 312 2642415
-                </span>
-              </div>
-              <div className="flex items-center gap-4 group">
-                <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#800000] group-hover:text-white transition-colors">
-                  <FaEnvelope size={12} />
-                </div>
-                <span className="group-hover:text-[#800000] transition-colors">
-                  sai@siradamjee.edu.pk
-                </span>
-              </div>
+                  </a>
+                ),
+              )}
             </div>
-          </div>
-
-          {/* Map Short */}
-          <div>
-            <h4 className="text-sm font-bold mb-8 uppercase tracking-[0.2em] text-[#800000]">
-              Location
-            </h4>
-            <div className="rounded-xl overflow-hidden h-40 w-full bg-gray-900 border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.143269476901!2d67.0858!3d24.9189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU1JzA4LjAiTiA2N8KwMDUnMDguOSJF!5e0!3m2!1sen!2s!4v1642152862800!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500 font-bold uppercase tracking-widest">
-            © {new Date().getFullYear()} SIR ADAMJEE INSTITUTE.
-          </p>
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-xs text-gray-600 hover:text-[#DAA520] transition-colors uppercase tracking-wider font-medium"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-xs text-gray-600 hover:text-[#DAA520] transition-colors uppercase tracking-wider font-medium"
-            >
-              Terms of Use
-            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;
