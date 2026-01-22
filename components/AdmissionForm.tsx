@@ -70,6 +70,7 @@ export default function AdmissionForm() {
                             <FaUser className="text-[#DAA520]" /> Full Name
                         </label>
                         <input
+                            suppressHydrationWarning
                             type="text"
                             name="fullName"
                             required
@@ -86,6 +87,7 @@ export default function AdmissionForm() {
                             <FaUser className="text-[#DAA520]" /> Father's Name
                         </label>
                         <input
+                            suppressHydrationWarning
                             type="text"
                             name="fatherName"
                             required
@@ -104,6 +106,7 @@ export default function AdmissionForm() {
                             <FaEnvelope className="text-[#DAA520]" /> Email Address
                         </label>
                         <input
+                            suppressHydrationWarning
                             type="email"
                             name="email"
                             required
@@ -120,6 +123,7 @@ export default function AdmissionForm() {
                             <FaPhone className="text-[#DAA520]" /> Phone Number
                         </label>
                         <input
+                            suppressHydrationWarning
                             type="tel"
                             name="phone"
                             required
@@ -141,8 +145,8 @@ export default function AdmissionForm() {
                             <label
                                 key={prog}
                                 className={`cursor-pointer border-2 rounded-xl p-3 text-center transition-all ${formData.program === prog
-                                        ? "border-[#800000] bg-[#800000] text-white shadow-md transform scale-105"
-                                        : "border-gray-100 bg-gray-50 text-gray-600 hover:border-[#DAA520]"
+                                    ? "border-[#800000] bg-[#800000] text-white shadow-md transform scale-105"
+                                    : "border-gray-100 bg-gray-50 text-gray-600 hover:border-[#DAA520]"
                                     }`}
                             >
                                 <input
@@ -165,6 +169,7 @@ export default function AdmissionForm() {
                         <FaPaperPlane className="text-[#DAA520]" /> Matric / O-Level Marks (%)
                     </label>
                     <input
+                        suppressHydrationWarning
                         type="number"
                         name="marks"
                         required

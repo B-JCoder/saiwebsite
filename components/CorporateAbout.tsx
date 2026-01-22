@@ -80,7 +80,7 @@ const CorporateAbout = () => {
               </div>
 
               <Link href="/about-us">
-                <button className="px-8 py-3 border-2 border-[#800000] text-[#800000] font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all rounded-lg">
+                <button suppressHydrationWarning className="px-8 py-3 border-2 border-[#800000] text-[#800000] font-bold uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all rounded-lg">
                   Read Our Story
                 </button>
               </Link>

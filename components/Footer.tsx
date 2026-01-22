@@ -1,9 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaFacebook,
-  FaTwitter,
   FaInstagram,
-  FaLinkedin,
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
@@ -27,12 +26,15 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl font-heading font-black tracking-tighter uppercase text-white mb-2">
-                SIR ADAMJEE
-              </h3>
-              <h3 className="text-3xl font-heading font-black tracking-tighter uppercase text-[#DAA520]">
-                INSTITUTE
-              </h3>
+              <div className="w-24 h-24 mb-6 rounded-full overflow-hidden border-2 border-[#DAA520]">
+                <Image
+                  src="/images/sai_seal_fixed.jpg"
+                  alt="Sir Adamjee Institute Seal"
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed font-light max-w-xs">
               A premier educational institution dedicated to fostering academic
@@ -40,17 +42,22 @@ const Footer = () => {
               brighter tomorrow.
             </p>
             <div className="flex gap-4">
-              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map(
-                (Icon, idx) => (
-                  <a
-                    key={idx}
-                    href="#"
-                    className="w-10 h-10 border border-white/10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#800000] hover:text-white hover:border-[#800000] transition-all duration-300"
-                  >
-                    <Icon size={14} />
-                  </a>
-                )
-              )}
+              <a
+                href="https://www.facebook.com/siradamjee.edu.pk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-[#800000] transition-all duration-300"
+              >
+                <FaFacebook size={14} />
+              </a>
+              <a
+                href="https://www.instagram.com/siradamjeeinstitute/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-[#800000] transition-all duration-300"
+              >
+                <FaInstagram size={14} />
+              </a>
             </div>
           </div>
 
@@ -70,11 +77,10 @@ const Footer = () => {
               ].map((link) => (
                 <li key={link}>
                   <Link
-                    href={`/${
-                      link === "Home"
-                        ? ""
-                        : link.toLowerCase().replace(" ", "-")
-                    }`}
+                    href={`/${link === "Home"
+                      ? ""
+                      : link.toLowerCase().replace(" ", "-")
+                      }`}
                     className="hover:text-[#800000] transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-[1px] bg-[#800000] transition-all duration-300"></span>
