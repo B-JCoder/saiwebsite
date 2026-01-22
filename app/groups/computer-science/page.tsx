@@ -12,7 +12,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-// import DepartmentFaculty from "@/components/DepartmentFaculty";
+import DepartmentFaculty from "@/components/DepartmentFaculty";
 
 export default function ComputerSciencePage() {
   const subjects = [
@@ -164,7 +164,8 @@ export default function ComputerSciencePage() {
       </section>
 
       {/* Faculty Section */}
-      {/* <DepartmentFaculty
+      {/* Faculty Section */}
+      <DepartmentFaculty
         departments={[
           "computer_science",
           "mathematics",
@@ -174,7 +175,7 @@ export default function ComputerSciencePage() {
           "islamic_studies",
           "pakistan_studies",
         ]}
-      /> */}
+      />
 
       {/* Career Roadmap */}
       <section className="py-24 px-6 container mx-auto">

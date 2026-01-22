@@ -295,7 +295,7 @@ export default function DepartmentFaculty({
               </motion.h2>
 
               {/* Heads Row */}
-              <div className="flex flex-wrapjustify-center gap-10 mb-10 justify-center">
+              <div className="flex flex-wrap justify-center gap-10 mb-10">
                 {heads.map((member, i) => (
                   <FacultyMemberCard key={i} member={member} isHead />
                 ))}

@@ -12,7 +12,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-// import DepartmentFaculty from "@/components/DepartmentFaculty";
+import DepartmentFaculty from "@/components/DepartmentFaculty";
 
 export default function PreMedicalPage() {
   const subjects = [
@@ -163,7 +163,8 @@ export default function PreMedicalPage() {
       </section>
 
       {/* Faculty Section */}
-      {/* <DepartmentFaculty
+      {/* Faculty Section */}
+      <DepartmentFaculty
         departments={[
           "biology",
           "chemistry",
@@ -173,7 +174,7 @@ export default function PreMedicalPage() {
           "islamic_studies",
           "pakistan_studies",
         ]}
-      /> */}
+      />
 
       {/* Career Roadmap */}
       <section className="py-24 px-6 container mx-auto">
